@@ -4,6 +4,11 @@ export interface SessionData {
   userId: string
   username: string
   password: string
+  isLoggedIn?: boolean
+}
+
+export const defaultSessionData: SessionData = {
+  isLoggedIn: false,
 }
 
 export const sessionOptions: SessionOptions = {

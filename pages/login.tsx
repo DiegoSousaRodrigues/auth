@@ -13,12 +13,15 @@ export default function Home() {
     }))
   }
 
-  function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault()
 
-    console.log('Form submitted:', formData)
+    await fetch('http://localhost:3000/api/login', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+    })
 
-    router.push('/home')
+    router.push('/')
   }
 
   return (
@@ -32,8 +35,7 @@ export default function Home() {
         <input
           className="border rounded-lg px-3 py-2"
           onChange={handleChange}
-          name="email"
-          type="email"
+          name="username"
           placeholder="Enter your email"
         />
       </label>
@@ -51,7 +53,7 @@ export default function Home() {
         className="border rounded-lg bg-blue-600 text-white py-2 cursor-pointer hover:bg-blue-700 transition-colors duration-200 mt-2"
         type="submit"
       >
-        Submit
+        Entrar
       </button>
     </form>
   )
