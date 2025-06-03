@@ -6,8 +6,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const data = await login(req, res)
-    console.log(data)
-    return data
+    return await login(req, res)
   }
 }

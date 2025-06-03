@@ -1,9 +1,10 @@
 import HomePage from '@/components/HomePage'
 import { getSession } from '@/services/session'
+import { Session } from '@/types/session'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-export default function Home() {
-  return <HomePage />
+export default function Home(props: { session: Session }) {
+  return <HomePage {...props.session} />
 }
 
 export const getServerSideProps = async (context: {
@@ -12,9 +13,7 @@ export const getServerSideProps = async (context: {
 }) => {
   const session = await getSession(context.req, context.res)
 
-  console.log('Session Data:', session)
-
   return {
-    props: {},
+    props: { session },
   }
 }
