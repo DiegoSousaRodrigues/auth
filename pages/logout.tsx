@@ -1,15 +1,10 @@
+import LogoutPage from '@/components/LogoutPage'
 import { withSession } from '@/services/withSession'
 import { Session } from '@/types/session'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { useRouter } from 'next/router'
 
-export default function LogoutPage({ session }: { session: Session }) {
-  const router = useRouter()
-  if (!session.isLoggedIn) {
-    router.push('/login')
-    return
-  }
-  return <div>Voce será deslogado em instantes</div>
+export default function LogoutScreen({ session }: { session: Session }) {
+  return <LogoutPage {...session} />
 }
 
 export const getServerSideProps = withSession(

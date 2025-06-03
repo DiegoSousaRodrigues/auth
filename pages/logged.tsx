@@ -1,14 +1,14 @@
-import LoginPage from '@/components/LoginPage'
 import { withSession } from '@/services/withSession'
 import { Session } from '@/types/session'
 import { NextApiRequest, NextApiResponse } from 'next'
+import dynamic from 'next/dynamic'
 
-export default function LoggedPage({ session }: { session: Session }) {
-  if (!session.isLoggedIn) {
-    return <LoginPage />
-  }
+const LoggedPage = dynamic(() => import('@/components/LoggedPage'), {
+  ssr: false,
+})
 
-  return <div>LoggedPage</div>
+export default function LoggedScreen({ session }: { session: Session }) {
+  return <LoggedPage {...session} />
 }
 
 export const getServerSideProps = withSession(
