@@ -109,17 +109,7 @@ Acesse [http://localhost:3000](http://localhost:3000)
 - Na produção, o cookie é setado com `Secure: true`, exigindo HTTPS.
 - A senha da sessão (`SESSION_SECRET`) deve ter **no mínimo 32 caracteres** e ser mantida em segurança via variáveis de ambiente.
 - A autenticação está simulada, mas a estrutura é facilmente adaptável para conectar a bancos de dados reais ou serviços externos.
-
----
-
-## 🚩 Melhorias futuras
-
-- Integração com banco de dados (PostgreSQL, MongoDB, etc.)
-- Implementação de cadastro de usuários
-- Middleware para proteção de rotas no Next.js 13+
-- Suporte a OAuth (Google, GitHub, etc.)
-- Feedbacks visuais de autenticação (loading, erros, etc.)
-
+  
 ---
 
 ## 👨‍💻 Autor
@@ -127,12 +117,6 @@ Acesse [http://localhost:3000](http://localhost:3000)
 - **Diego Sousa Rodrigues**  
 🔗 [LinkedIn](https://www.linkedin.com/in/diego-sousa-rodrigues/)  
 🐙 [GitHub](https://github.com/DiegoSousaRodrigues)
-
----
-
-## 🪪 Licença
-
-Este projeto está licenciado sob a licença MIT.
 
 ---
 
