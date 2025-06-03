@@ -39,6 +39,9 @@ export const login = async (req: NextApiRequest, res: NextApiResponse) => {
 
 export const logout = async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getIronSession<SessionData>(req, res, sessionOptions)
+  if (!session.isLoggedIn) {
+    return res.status(401).json({ error: 'You are not logged in' })
+  }
   session.destroy()
   return res.status(200).json({ message: 'Logout successful' })
 }

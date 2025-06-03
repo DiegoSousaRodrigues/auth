@@ -7,5 +7,5 @@ export default function LoggedPage(session: Session) {
     return router.push('/login')
   }
 
-  return <div>LoggedPage</div>
+  return <span className="text-white">LoggedPage</span>
 }
