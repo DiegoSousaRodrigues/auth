@@ -79,8 +79,6 @@ cd auth
 
 ```bash
 npm install
-# ou
-yarn install
 ```
 
 ### 3. Configure as variáveis de ambiente
@@ -95,8 +93,6 @@ SESSION_SECRET=uma-senha-bem-complexa-com-no-minimo-32-caracteres
 
 ```bash
 npm run dev
-# ou
-yarn dev
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000)
