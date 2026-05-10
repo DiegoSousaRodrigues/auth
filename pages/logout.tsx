@@ -8,12 +8,7 @@ export default function LogoutScreen({ session }: { session: Session }) {
 }
 
 export const getServerSideProps = withSession(
-  async (
-    _: { req: NextApiRequest; res: NextApiResponse },
-    session: Session
-  ) => {
-    return {
-      props: { session },
-    }
+  async (_: { req: NextApiRequest; res: NextApiResponse }, session: Session) => {
+    return { props: { session } }
   }
 )
